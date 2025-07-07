@@ -1,0 +1,31 @@
+/* index.css */
+:root {
+  /* system UI font like Jellitsch */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 600;
+
+  /* dark‐on‐light */
+  color-scheme: light dark;
+  color: #ffffff;              /* default text color */
+  background-image: url('/images/room.jpeg');
+  background-color: #000000;   /* page background */
+}
+
+/* Links: no underlines by default, blue on hover */
+a {
+  color: #646cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: underline;
+  color: #535bf2;
+}
+
+/* remove that monospace and background image… */
+body {
+  margin: 0;
+  min-height: 100vh;
+}
