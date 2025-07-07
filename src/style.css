@@ -3,10 +3,18 @@
 /* full-bleed, centered max-width */
 .container {
   display: flex;
-  max-width: 1280px;
+  max-width: 100%vw;
   margin: 0 auto;
-  padding: 2rem;
+   /* top | right | bottom | left */
+  padding: 1rem 1rem 1rem 1rem;
+  /* Add rounded corners to the inset shadow */
+  
+  border: 3px solid #fff ;
+  border-radius: 16px;
+  /*box-shadow: 0 0 0 1rem #000 inset; */
+  box-sizing: border-box;
   gap: 2rem;               /* space between columns */
+  min-height: 100vh; /* ensure full viewport height */
 }
 
 /* left nav column, right content column */
@@ -14,25 +22,47 @@
   flex: 1;                 /* each takes 50% */
 }
 
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 3rem;
+  align-items: flex-start;
+  min-height: 40vh;
+}
+
+.links-vertical-center {
+  position: fixed;
+  top: 48%;
+  left: 2rem;           /* now 2rem from the browser's left edge */
+  transform: translateY(-50%);
+}
+
+
 /* remove bullets and resets */
 .links {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  text-align: left;
+  
+  
+}
+.links li {
+  margin-bottom: 0.1rem;
 }
 
 /* nav link font-size, color */
 .links a {
-  font-size:3.25rem;
+  font-size: clamp(2rem, 12vh, 8rem); /* responsive font size, scales down on small screens */
+  @media (max-width: 600px) {
+    font-size: clamp(1.5rem, 8vh, 6rem);
+  }
   color: #ffffff;
   text-decoration: none;
   font-family: inherit;    /* use the system UI from index.css */
   font-weight: inherit;
+  line-height: 1.1;
 }
 .links a:hover {
   text-decoration: underline;
@@ -44,14 +74,43 @@
 }
 
 /* right‐column "now" paragraph styling */
+/* 1. Fix it in place and vertically center at the same spot as .links */
 .now {
-  font-size: 1rem;
+  position: fixed;            /* take it out of normal flow */
+  top: 3%   ;               /* same top as .links-vertical-center */
+  right: 2rem;                /* distance from right edge */
+  transform: translateY(-50%);/* true vertical centering */
+  
+  width: 50%;                 /* or however wide you want the marquee "window" */
+  padding: 0.5rem 0;          /* optional breathing room */
+  box-sizing: border-box;
+  
+  overflow: hidden;           /* hide the overflowing text */
+  white-space: nowrap;        /* keep it on one line */
+  text-align: right;          /* line it up to the right edge */
+  
+  /* preserve your existing styling: */
+  font-size: 2rem;
   line-height: 1.5;
   font-style: italic;
-  /* optional gradient text like your old style */
   background: linear-gradient(to right, #3333ff, #ff00cc);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: white;
+}
+
+/* 2. Animate the inner span */
+.marquee {
+  display: inline-block;
+  /* push it offscreen to the right initially */
+  padding-left: 100%;
+  /* animate it leftwards */
+  animation: marquee 15s linear infinite;
+}
+
+/* 3. Keyframes */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
 /* Modal overlay and window styles */
@@ -66,26 +125,21 @@
 }
 
 .modal-window {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 0px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: 0 16px 42px rgba(255, 255, 255, 0.18);
   padding: 2.5rem 2rem 2rem 2rem;
-  min-width: 340px;
-  max-width: 95vw;
-  width: 420px;
+  min-width: min(340px, 90vw);
+  max-width: 96vw;
+  width: clamp(3rem, 30vw, 100rem);
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  box-sizing: border-box;
+  text-align: left;
 }
 
-.modal-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 0 0 0.5rem 0;
-  color: #222;
-}
 
 .modal-close {
   position: absolute;
@@ -94,12 +148,12 @@
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #888;
+  color: #ffffff;
   cursor: pointer;
   transition: color 0.15s;
 }
 .modal-close:hover {
-  color: #222;
+  color: #ffffff;
 }
 
 .modal-content {
@@ -107,28 +161,71 @@
   flex-direction: column;
   gap: 1.2rem;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: left;
+  text-align: left;
 }
 
 .modal-row {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 0.5rem;
   font-size: 1.1rem;
 }
 
 .modal-label {
-  font-weight: 600;
-  color: #444;
+  font-weight: inherit;
+  color: #ffffff;
   min-width: 80px;
 }
 
 .modal-content a {
-  color: #3333ff;
+  color: #fbff00;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: inherit;
+  text-align: left;
 }
 .modal-content a:hover {
   text-decoration: underline;
+}
+
+/* --- Location & Clock (bottom right) --- */
+.location-clock {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+  z-index: 1001;
+  font-size: 1.15rem;
+  font-family: inherit;
+  color: #fff;
+  gap: 0.2rem;
+}
+.location-clock .location {
+  font-weight: inherit;
+  letter-spacing: 0.03em;
+  color: #fff;
+  font-size: 1.1rem;
+}
+.location-clock .clock {
+  font-family: 'Menlo', 'Consolas', monospace;
+  font-size: 1.3rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+@media (max-width: 600px) {
+  .location-clock {
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.5rem 0.7rem;
+    font-size: inherit;
+  }
+  .location-clock .clock {
+    font-size: 1.1rem;
+  }
 }
