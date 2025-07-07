@@ -18,6 +18,7 @@ function App() {
     import('./scripts/main.js')
     import('./scripts/cursorTrail.js')
   }, [])
+  
 
   // Update clock every second
   useEffect(() => {
@@ -69,6 +70,11 @@ function App() {
         <p className="now">
           <span className="marquee">Currently reading "Sun & Steel" by Yukio Mishima, training for a 3:30 marathon, finishing my Computer Science degree, and building a Youtube channel</span>
         </p>
+        {/* Location & Clock bottom right */}
+        <div className="location-clock">
+          <div className="location">{location}</div>
+          <div className="clock">{clock}</div>
+        </div>
       </div>
       {showModal && (
         <div className="modal-overlay">
@@ -82,11 +88,6 @@ function App() {
           </div>
         </div>
       )}
-      {/* Location & Clock bottom right */}
-      <div className="location-clock">
-        <div className="location">{location}</div>
-        <div className="clock">{clock}</div>
-      </div>
     </div>
   )
 }
