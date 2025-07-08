@@ -20,10 +20,10 @@
   background-image: url('/images/room.jpeg');
   background-color: #000000;
   /* Uncomment below to enable background image settings */
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   z-index: -1;
 }
 
