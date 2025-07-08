@@ -39,10 +39,10 @@ body {
 /* in your main stylesheet */
 #three-container {
   position: fixed;
-  top:    0;
-  left:   0;
-  width:  100%;
-  height: 100%;
+  top: 0;
+  right: 30%;
+  width: 50vw;
+  height: 100vh;
   pointer-events: none;      /* so clicks “pass through” to your UI */
   z-index: 100;              /* or any number higher than your other elements */
 }
