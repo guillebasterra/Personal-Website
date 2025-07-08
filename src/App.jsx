@@ -59,8 +59,8 @@ function App() {
             </li>
             <li><a href="https://github.com/guillebasterra">GitHub</a></li>
             <li><a href="https://youtube.com/@willybasterra">YouTube</a></li>
-            <li><a href="https://substack.com/@guillermobasterra">Substack</a></li>
-            <li><a href="https://linkedin.com/in/guillermobasterradiezhandino">LinkedIn</a></li>
+            <li><a href="https://tothinkabout.substack.com/">Substack</a></li>
+            <li><a href="https://www.linkedin.com/in/guillermo-basterra-diezhandino">LinkedIn</a></li>
             <li><a href="https://goodreads.com/guillebasterra">Goodreads</a></li>
             <li><a href="/resume.pdf">Résumé</a></li>
           </ul>
@@ -68,7 +68,7 @@ function App() {
       </div>
       <div className="right">
         <p className="now">
-          <span className="marquee">Currently reading "Sun & Steel" by Yukio Mishima, training for a 3:30 marathon, finishing my Computer Science degree, and building a Youtube channel</span>
+          <span className="marquee">Currently: Computer Science @ USC, machine learning @ Kantar, reading "Sun & Steel" by Yukio Mishima, training for a 3:30 marathon</span>
         </p>
         {/* Location & Clock bottom right */}
         <div className="location-clock">
@@ -78,12 +78,11 @@ function App() {
       </div>
       {showModal && (
         <div className="modal-overlay">
-          <div className="modal-window" ref={modalRef}>
-            <button className="modal-close" onClick={() => setShowModal(false)} aria-label="Close">&times;</button>
+          <div className="modal-window modal-open" ref={modalRef}>
             <div className="modal-content">
               <div className="modal-row"><span className="modal-label">Shoot me an email:</span> <a href="mailto:guillebasterra@gmail.com">guillebasterra@gmail.com</a></div>
               <div className="modal-row"><span className="modal-label">Or DM me on Instagram:</span> <a href="https://instagram.com/willybasterra" target="_blank" rel="noopener noreferrer">@willybasterra</a></div>
-              <div className="modal-row"><span className="modal-label">I'll read it. Reach out. I'm serious.</span></div>
+              <div className="modal-row"><span className="modal-label">Reach out, I'd love to talk.</span></div>
             </div>
           </div>
         </div>

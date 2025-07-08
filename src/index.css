@@ -1,21 +1,29 @@
 /* index.css */
-:root {
-  /* system UI font like Jellitsch */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./assets/fonts/zeldadxt.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
 
-  /* dark‐on‐light */
+
+
+:root {
+  /* Use custom font, fallback to system UI fonts */
+  font-family: 'MyCustomFont', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 600;
+
+  /* dark-on-light */
   color-scheme: light dark;
-  color: #ffffff;              /* default text color */
+  color: #ffffff;
   background-image: url('/images/room.jpeg');
-  background-color: #000000;   /* page background */
-  /* Ensure background image is at the lowest layer */
-  /* background-attachment: fixed;
+  background-color: #000000;
+  /* Uncomment below to enable background image settings */
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; */
+  background-position: center;
   z-index: -1;
 }
 

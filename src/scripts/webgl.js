@@ -11,7 +11,7 @@ camera.position.z = 5;
 
 // ———— GEOMETRY & UNIFORMS ————
 // Build a “rod” for each vertex normal of a subdivided icosahedron
-const baseGeo    = new THREE.IcosahedronGeometry(1, 16);
+const baseGeo    = new THREE.IcosahedronGeometry(1, 32);
 const N          = baseGeo.attributes.position.count;
 
 const positions  = new Float32Array(N * 2 * 3);
@@ -170,6 +170,7 @@ const material = new THREE.ShaderMaterial({
 // build & add the ink‐rod line segments
 const rods = new THREE.LineSegments(rodsGeo, material);
 scene.add(rods);
+rods.scale.set(2, 2, 2);
 
 // ———— MOUSE TRACKING ————
 const mouse = new THREE.Vector2();
