@@ -1,4 +1,7 @@
-# Built with React, Vite, and ThreeJS
+# My personal website, built with React, Vite, and ThreeJS
+
+![Website preview](website.png)
+
 
 Essentially a link-tree, but with a fun morphing sphere
 
