@@ -126,7 +126,7 @@
 
 .modal-window {
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 0px;
+  border-radius: 3px;
   box-shadow: 0 16px 42px rgba(255, 255, 255, 0.18);
   padding: 2.5rem 2rem 2rem 2rem;
   min-width: min(340px, 90vw);

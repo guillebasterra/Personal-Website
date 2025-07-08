@@ -70,6 +70,7 @@ function App() {
         <p className="now">
           <span className="marquee">Currently reading "Sun & Steel" by Yukio Mishima, training for a 3:30 marathon, finishing my Computer Science degree, and building a Youtube channel</span>
         </p>
+        <div id="three-container"></div>
         {/* Location & Clock bottom right */}
         <div className="location-clock">
           <div className="location">{location}</div>
