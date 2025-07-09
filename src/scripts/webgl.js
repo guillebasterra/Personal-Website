@@ -9,6 +9,7 @@ document.getElementById('three-container').appendChild(renderer.domElement);
 
 camera.position.z = 5;
 
+
 // ———— GEOMETRY & UNIFORMS ————
 // Build a “rod” for each vertex normal of a subdivided icosahedron
 const baseGeo    = new THREE.IcosahedronGeometry(1, 32);
