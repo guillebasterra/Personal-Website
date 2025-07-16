@@ -68,7 +68,7 @@ function App() {
       </div>
       <div className="right">
         <p className="now">
-          <span className="marquee">Currently: Computer Science @ USC, machine learning @ Kantar, reading "Sun & Steel" by Yukio Mishima, training for a 3:30 marathon</span>
+          <span className="marquee">Currently: Computer Science @ USC, machine learning @ Kantar, reading "The Brothers Karamazov" by Fyodor Dostoyevsky, training for a 3:30 marathon</span>
         </p>
         {/* Location & Clock bottom right */}
         <div className="location-clock">
