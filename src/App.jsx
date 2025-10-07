@@ -10,9 +10,9 @@ function App() {
   // Location and clock state
   const [clock, setClock] = useState("");
   // Change this value to update the location
-  const location = "London";
+  const location = "Los Angeles";
   // Set your timezone here (e.g., 'Europe/London', 'America/New_York')
-  const timeZone = "Europe/London";
+  const timeZone = "America/Los_Angeles";
 
   useEffect(() => {
     import('./scripts/main.js')
