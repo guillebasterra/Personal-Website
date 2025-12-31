@@ -68,7 +68,7 @@ function App() {
       </div>
       <div className="right">
         <p className="now">
-          <span className="marquee">Currently: Computer Science @ USC, machine learning @ Kantar, reading "The Brothers Karamazov" by Fyodor Dostoyevsky, training for a 3:30 marathon</span>
+          <span className="marquee">Currently: Computer Science @ USC, reading "The Last Temptation of Christ" by Nikos Kazantzakis, training for the LA marathon </span>
         </p>
         {/* Location & Clock bottom right */}
         <div className="location-clock">
@@ -81,7 +81,7 @@ function App() {
           <div className="modal-window modal-open" ref={modalRef}>
             <div className="modal-content">
               <div className="modal-row"><span className="modal-label">Shoot me an email:</span> <a href="mailto:guillebasterra@gmail.com">guillebasterra@gmail.com</a></div>
-              <div className="modal-row"><span className="modal-label">Or DM me on X/Twitter:</span> <a href="https://x.com/willybasterra" target="_blank" rel="noopener noreferrer">@willybasterra</a></div>
+              <div className="modal-row"><span className="modal-label">Or DM me on X:</span> <a href="https://x.com/willybasterra" target="_blank" rel="noopener noreferrer">@willybasterra</a></div>
               <div className="modal-row"><span className="modal-label">Reach out, I'd love to talk.</span></div>
             </div>
           </div>
