@@ -81,7 +81,7 @@ function App() {
           <div className="modal-window modal-open" ref={modalRef}>
             <div className="modal-content">
               <div className="modal-row"><span className="modal-label">Shoot me an email:</span> <a href="mailto:guillebasterra@gmail.com">guillebasterra@gmail.com</a></div>
-              <div className="modal-row"><span className="modal-label">Or DM me on Instagram:</span> <a href="https://instagram.com/willybasterra" target="_blank" rel="noopener noreferrer">@willybasterra</a></div>
+              <div className="modal-row"><span className="modal-label">Or DM me on X/Twitter:</span> <a href="https://x.com/willybasterra" target="_blank" rel="noopener noreferrer">@willybasterra</a></div>
               <div className="modal-row"><span className="modal-label">Reach out, I'd love to talk.</span></div>
             </div>
           </div>
